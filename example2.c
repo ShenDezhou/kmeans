@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #include "kmeans.h"
-#define DIM 1
+#define DIM 2
 void kmeans(
   int dim,					// dimension of data
   double *X,					// pointer to data
@@ -13,8 +13,8 @@ void kmeans(
   );
 
 int main(int nargs, char **args) {
-  double v[10] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0};
-  double c[2] = {2.0, 5.0};
+  double v[20] = {1.0, 0.0, 2.0, 0.0,3.0, 0.0,4.0, 0.0,5.0, 0.0,6.0, 0.0,7.0, 0.0,8.0, 0.0,9.0, 0.0,10.0,0.0};
+  double c[4] = {2.0,0.0, 5.0,0.0};
   int r[10];
   kmeans(DIM,
          v,

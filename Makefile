@@ -1,5 +1,6 @@
+.RECIPEPREFIX = \t
 OBJS=kmeans.o
-EXE=example1
+EXE=example1 example2
 
 CFLAGS=-g -O0
 
@@ -10,3 +11,12 @@ clean:
 
 example1: $(OBJS) example1.o
 	$(CC) $(CFLAGS) $^ -o $@
+
+example2: $(OBJS) example2.o
+		$(CC) $(CFLAGS) $^ -o $@
+
+test:
+	#running tests
+	./example1
+	#
+	./example2
