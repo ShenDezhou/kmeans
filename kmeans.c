@@ -19,7 +19,7 @@ void fail(char *str)
   printf(str);
   exit(-1);
 }
-//test
+
 double calc_distance(int dim, double *p1, double *p2)
 {
   double distance_sq_sum = 0;
@@ -192,7 +192,7 @@ void cluster_diag(int dim, int n, int k, double *X, int *cluster_assignment_inde
   for (int ii = 0; ii < k; ii++) {
     printf("    cluster %d:     members: %8d, centroid (", ii, cluster_member_count[ii]);
     for (int jj = 0; jj < dim; jj++) {
-      printf("%.1f, ", cluster_centroid[ii + jj*dim]);
+      printf("%.1f, ", cluster_centroid[ii*dim + jj]);
     }
     printf(") \n");
   }
