@@ -189,8 +189,13 @@ void cluster_diag(int dim, int n, int k, double *X, int *cluster_assignment_inde
   get_cluster_member_count(n, k, cluster_assignment_index, cluster_member_count);
 
   printf("  Final clusters \n");
-  for (int ii = 0; ii < k; ii++)
-    printf("    cluster %d:     members: %8d, centroid (%.1f %.1f) \n", ii, cluster_member_count[ii], cluster_centroid[ii*dim + 0], cluster_centroid[ii*dim + 1]);
+  for (int ii = 0; ii < k; ii++) {
+    printf("    cluster %d:     members: %8d, centroid (", ii, cluster_member_count[ii]);
+    for (int jj = 0; jj < dim; jj++) {
+      printf("%.1f, ", cluster_centroid[ii + jj*dim]);
+    }
+    printf(") \n");
+  }
 }
 
 void copy_assignment_array(int n, int *src, int *tgt)
